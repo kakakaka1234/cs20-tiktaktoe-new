@@ -51,9 +51,9 @@ void draw() {
   rect(0, 0, width, height);
   fill(dark);
   stroke(light);
-  text("X score", 50, 25);
+  text("X", 50, 25);
   text(Xscore, 50, 50);
-  text("O score", 400, 25);
+  text("O", 400, 25);
   text(Oscore, 400, 50);
   fill(dark);
   stroke(light);
