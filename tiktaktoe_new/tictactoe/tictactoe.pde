@@ -74,9 +74,7 @@ void draw() {
   rect(0, 0, width, height);
   fill(dark);
   stroke(light);
-  text("X", 50, 25);
   text(Xscore, 50, 50);
-  text("O", 400, 25);
   text(Oscore, 400, 50);
   fill(dark);
   stroke(light);
@@ -106,6 +104,7 @@ fill(255,0,0);
   if (Oscore == 10) {
     Owin();
   }
+  quitButtonDraw();
 }
 
 void mouseClicked() {
@@ -138,6 +137,7 @@ void mouseClicked() {
     }
     gamePlayDraw();
   }
+   quitButtonMouseClicked();
 }
 
 void modeDraw() {
@@ -150,10 +150,10 @@ void modeDraw() {
     text("easy", 225, 50);
   }
   if (mode==2) {
-    text("mid", 225, 50);
+    text("med", 225, 50);
   }
   if (mode==3) {
-    text("hard", 225, 50);
+    text("imp", 225, 50);
   }
   fill(light);
   stroke(dark);
