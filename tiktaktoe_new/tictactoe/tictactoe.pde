@@ -1,3 +1,17 @@
+ //Global Variables
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+Minim minim;
+AudioPlayer sound;
+//test
+AudioPlayer player;
+AudioInput input;
+
+
 PFont font;
 int Xscore = 0;
 int Oscore = 0;
@@ -26,6 +40,15 @@ void setup() {
   font = createFont("Times New Roman", 32);
   textFont(font);
   textAlign(CENTER, CENTER);
+    minim = new Minim(this);
+  player = minim.loadFile("Typing On Keyboard-SoundBible.com-1459197142.mp3");
+  input = minim.getLineIn();
+  
+  
+  
+  minim= new Minim(this);
+  sound = minim.loadFile("Quiet.mp3");
+  sound.loop();
 }
 void draw() {
   if (over) {
@@ -57,13 +80,15 @@ void draw() {
   text(Oscore, 400, 50);
   fill(dark);
   stroke(light);
+  fill(#DB58CE);
   rect(0, 0, 15, 15);
   fill(light);
   stroke(dark);
-
+fill(255,200,200);
   rect (175, 25, 275, 75);
   modeDraw();
 
+fill(255,0,0);
   rect(0, 100, 150, 250);//row 1
   rect(150, 100, 300, 250);
   rect(300, 100, 450, 250);
@@ -132,4 +157,11 @@ void modeDraw() {
   }
   fill(light);
   stroke(dark);
+}
+void mousePressed(){
+player.play();
+}
+void mouseReleased(){  
+  player.close();
+  player = minim.loadFile("Typing On Keyboard-SoundBible.com-1459197142.mp3");
 }
