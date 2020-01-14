@@ -37,7 +37,7 @@ void setup() {
   modeDraw();
   size(450, 550);
   rectMode(CORNERS);
-  font = createFont("Times New Roman", 32);
+  font = createFont("Harrington", 52);
   textFont(font);
   textAlign(CENTER, CENTER);
     minim = new Minim(this);
@@ -83,7 +83,7 @@ void draw() {
   fill(light);
   stroke(dark);
 fill(255,200,200);
-  rect (175, 25, 275, 75);
+  rect (100, 25, 350, 100);
   modeDraw();
 
 fill(255,0,0);
@@ -116,7 +116,7 @@ void mouseClicked() {
         darkMode = true;
       }
     }
-    if (mouseX<275&&mouseX>175&&mouseY<75&&mouseY>25) {
+    if (mouseX<450&&mouseX>100&&mouseY<125&&mouseY>25) {
       if (mode<3) {
         mode++;
         if (turn == 2) {
@@ -144,20 +144,21 @@ void modeDraw() {
   fill(dark);
   stroke(light);
   if (mode==0) {
-    text("PvP", 225, 50);
+    text("2 PLAYER MODE", 225, 65);
   }
   if (mode==1) {
-    text("easy", 225, 50);
+    text("EASY MODE", 225, 65);
   }
   if (mode==2) {
-    text("med", 225, 50);
+    text("MEDIUM MODE", 225, 65);
   }
   if (mode==3) {
-    text("imp", 225, 50);
+    text("IMPOSSIBLE MODE", 225, 65);
   }
   fill(light);
   stroke(dark);
 }
+
 void mousePressed(){
 player.play();
 }
